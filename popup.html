@@ -1,0 +1,50 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        html {
+            min-height: 20em;
+            min-width: 30em;
+            background: rgb(203, 231, 243);
+        }
+
+        span {
+            font-size: 16px;
+            font-style: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:black;
+        }
+
+        #selectedText,#storageContent{
+            font-size: 12px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color:crimson;
+        }
+
+        hr {
+            border: 5px solid rgb(74, 107, 2);
+            border-radius: 5px;
+            }
+        
+        hr.thinLine {
+            border: 1px solid rgb(74, 107, 2);
+        }
+    </style>
+    <script src="indexed_db.js"></script>
+</head>
+<body>
+    <h1>携辞</h1>
+    <div>
+        <span>当前选中内容</span>
+        <div id="selectedText"></div>
+    </div>
+    <hr/>
+    <div>
+        <span>词汇记录</span>
+        <div id="storageContent"></div>
+        <script src="popup.js"></script>
+    </div>
+</body>
+</html>

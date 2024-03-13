@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "携辞(CarryLexicon)",
+    "version": "1.0",
+    "description": "记录信息，随时翻阅，定时复习，多端互联.",
+    "permissions": [
+      "contextMenus",
+      "activeTab",
+      "tabs",
+      "sidePanel",
+      "scripting",
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://*/*","https://*/"],
+        "all_frames": false,
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      },
+      "default_title": "收藏知识"
+    },
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    }
+  }
+
+
