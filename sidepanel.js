@@ -15,22 +15,39 @@ function getDatasFromStorage(){
     });
 }
 
-function getDatasFromIndexedDB(){
+// 读取IndexedDB中的内容
+function getDatasFromIndexedDB() {
+
+    let endDiv = document.createElement("div");
+    endDiv.setAttribute('class','end');
+    endDiv.append('-- END ---');
+    
+    //倒序插入
+    document.getElementById('storageContent').insertAdjacentElement('afterbegin',endDiv);
+
+    let hr = document.createElement("hr");
+    hr.setAttribute('class', 'thinLine')
+    //倒序插入
+    document.getElementById('storageContent').insertAdjacentElement('afterbegin',hr);
 
     getAllDatas((datas) => {
         console.log(datas);
         for (const data of datas) {
             console.log(data);
-            render(data)
-        }
+            render(data);
+        };
     });
 };
 
-function render(data){
-    let hr = document.createElement("hr");
-    hr.setAttribute('class','thinLine')
-    document.getElementById('storageContent').append(hr);
+function render(data) {
+    
     let storageContentDiv = document.createElement("div");
-    storageContentDiv.append('['+data.time+'] '+ data.id+' : '+  data.word);
-    document.getElementById('storageContent').append(storageContentDiv);
+    storageContentDiv.append('[' + data.time + '] ' + data.id + ' : ' + data.word);
+    //倒序插入
+    document.getElementById('storageContent').insertAdjacentElement('afterbegin',storageContentDiv);
+
+    let hr = document.createElement("hr");
+    hr.setAttribute('class', 'thinLine')
+    //倒序插入
+    document.getElementById('storageContent').insertAdjacentElement('afterbegin',hr);
 }
